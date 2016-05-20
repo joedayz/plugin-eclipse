@@ -1,0 +1,36 @@
+apply plugin: "earSharedLibConventions"
+
+evaluationDependsOn(':macroProcess-process-model')
+evaluationDependsOn(':macroProcess-process-dao-ifz')
+evaluationDependsOn(':macroProcess-process-dao-imp')
+evaluationDependsOn(':macroProcess-process-service-ifz')
+evaluationDependsOn(':macroProcess-process-service-imp')
+
+dependencies {
+	deploy project(':macroProcess-process-model')
+	deploy project(':macroProcess-process-dao-ifz')
+	deploy project(':macroProcess-process-dao-imp')
+	deploy project(':macroProcess-process-service-ifz')
+	deploy project(':macroProcess-process-service-imp')
+}
+
+import pe.gob.sunat.framework.build.ear.LibModule
+
+ear{
+	deploymentDescriptor {
+		module(new LibModule(project(':macroProcess-process-model').jar.archiveName), "java")
+		module(new LibModule(project(':macroProcess-process-dao-ifz').jar.archiveName), "java")
+		module(new LibModule(project(':macroProcess-process-dao-imp').jar.archiveName), "ejb")
+		module(new LibModule(project(':macroProcess-process-service-ifz').jar.archiveName), "java")
+		module(new LibModule(project(':macroProcess-process-service-imp').jar.archiveName), "ejb")
+	}
+}
+
+task copyEar(dependsOn: ear) << {
+    println "Copiar ear de ${libsDir.getPath()} hacia ${System.properties['user.home']}/Projects/sunat/ears"
+    copy{
+      from libsDir
+      into "${System.properties['user.home']}/Projects/sunat/ears"
+      include '*.ear'
+    }
+  }

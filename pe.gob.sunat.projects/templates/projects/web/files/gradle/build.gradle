@@ -1,0 +1,9 @@
+apply plugin: 'warConventions'
+
+//war{
+//	webInf{
+//		from 'src/main/resources'
+//	}
+//	
+//	classpath = configurations.runtime
+//}

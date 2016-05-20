@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="Gradle Resources"
+            id="pe.gob.sunat.projects.wizards.category.gradle">
+      </category>
+      <wizard
+            name="Gradle Project"
+            icon="icons/gradle-project.png"
+            category="pe.gob.sunat.projects.wizards.category.gradle"
+            class="pe.gob.sunat.projects.wizards.NewGradleProjectWizard"
+            id="pe.gob.sunat.projects.wizards.NewGradleProjectWizard">
+       </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            name="New Gradle Module Command"
+            defaultHandler="pe.gob.sunat.projects.command.NewGradleModuleCommand"
+            id="pe.gob.sunat.projects.command.NewGradleModuleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="HTML5 Palette"
+            icon="icons/palette.png"
+            class="pe.gob.sunat.projects.palette.Html5Palette"
+            id="pe.gob.sunat.projects.palette.Html5Palette">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+      		locationURI="popup:common.new.menu?after=new">
+         <command
+               commandId="pe.gob.sunat.projects.command.NewGradleModuleCommand"
+               icon="icons/gradle-project.png"
+               label="Gradle Module"
+               style="push">
+            <visibleWhen
+            	checkEnabled="false">
+            	<with variable="activeMenuSelection">
+            		<or>
+            			<count value="1"></count>
+            			<adapt type="org.eclipse.core.internal.resources.Project">
+            				<test property="org.eclipse.core.resources.open" value="open"/>
+            			</adapt>
+                  	</or>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+      		targetID="org.eclipse.wst.web.ui.webDevPerspective">
+        <view
+               id="pe.gob.sunat.projects.palette.Html5Palette"
+               relative="org.eclipse.ui.editorss"
+               relationship="right"
+               ratio="0.75"
+               visible="true"
+               closeable="false"
+               moveable="false">
+        </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

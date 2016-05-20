@@ -1,0 +1,10 @@
+apply plugin: 'warConventions'
+
+
+dependencies{
+	compile project(':macroProcess-processws-controller')
+	providedCompile 'javax:javaee-api:7.0'
+	providedCompile 'javax.ws.rs:javax.ws.rs-api:2.0.1'		
+	providedCompile group: 'procesos.megaProcess.macroProcess.megaProcess-macroProcess-process-sharedlib', name: 'macroProcess-process-model', version: '1.0.0'
+	providedCompile group: 'procesos.megaProcess.macroProcess.megaProcess-macroProcess-process-sharedlib', name: 'macroProcess-process-service-ifz', version: '1.0.0'
+}

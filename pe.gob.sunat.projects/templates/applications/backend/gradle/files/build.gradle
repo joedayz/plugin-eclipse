@@ -1,0 +1,41 @@
+buildscript{
+	repositories {
+		maven {
+			url "$artifactoryUrl/plugins-release"
+		}
+	}
+	
+	dependencies {
+		classpath(group: 'procesos.gestion.configuracion', name: 'build-gradle', version: '1.9.15')
+
+	}
+}
+
+apply plugin: "parentConventions"
+
+subprojects {subproject->
+	group = "procesos.megaProcess.macroProcess.megaProcess-macroProcess-process-backend"
+	version = '1.0.0' 
+	//paseNro = 'PAS20165E200000000'
+
+	repositories {
+		mavenLocal()
+	}	
+	
+	apply plugin:'java'
+	apply plugin: 'maven'
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+	
+	uploadArchives {
+		repositories {
+			mavenDeployer {
+				repository(url: "file:${System.properties['user.home']}/.m2/repository/")
+			}
+		}
+				
+	}
+	
+
+}

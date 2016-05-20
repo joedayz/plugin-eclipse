@@ -1,0 +1,30 @@
+
+<div ng-app="sunatApp" ng-controller="CodigoBarrasController as vm">
+	<barcode type="ean" render="img" string="0029000018068"
+		options="vm.options"></barcode>
+	<br>
+	<barcode type="upc" render="img" string="029000018068"
+		options="vm.options"></barcode>
+	<br>
+	<barcode type="code39" render="img" string="Code39 Barcode"
+		options="vm.options"></barcode>
+	<br>
+	<barcode type="code128b" render="img" string="Code128B Barcode"
+		options="vm.options"></barcode>
+	<br>
+	<barcode type="code128c" render="img" string="22"
+		options="vm.options"></barcode>
+	<br>
+	<barcode type="itf" render="img" string="1234567895"
+		options="vm.options"></barcode>
+	<br>
+	<barcode type="itf14" render="img" string="98765432109213"
+		options="vm.options"></barcode>
+	<br>
+</div>
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="js/libs/barcode.js"></script>
+
+<script src="js/codigo-barras.js"></script>

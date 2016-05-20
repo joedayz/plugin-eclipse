@@ -1,0 +1,7 @@
+include 'iaprocesssubProcess-ws.war',
+		'macroProcess-processws-controller.jar',
+		'megaProcess-macroProcess-process-backend.ear'
+
+project(':iaprocesssubProcess-ws.war').name='iaprocesssubProcess-ws'
+project(':macroProcess-processws-controller.jar').name='macroProcess-processws-controller'
+project(':megaProcess-macroProcess-process-backend.ear').name='megaProcess-macroProcess-process-backend.ear'

@@ -1,0 +1,13 @@
+include 'model.jar',
+		'dao-ifz.jar',
+		'dao-imp.jar',
+		'service-ifz.jar',
+		'service-imp.jar',
+		'slb.ear'
+
+project(':model.jar').name='macroProcess-process-model'
+project(':dao-ifz.jar').name='macroProcess-process-dao-ifz'
+project(':dao-imp.jar').name='macroProcess-process-dao-imp'
+project(':service-ifz.jar').name='macroProcess-process-service-ifz'
+project(':service-imp.jar').name='macroProcess-process-service-imp'
+project(':slb.ear').name='megaProcess-macroProcess-process-sharedlib.ear'

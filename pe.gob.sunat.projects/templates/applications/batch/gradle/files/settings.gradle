@@ -1,0 +1,5 @@
+include 'ejbmacroProcess-processmdb.jar',
+		'megaProcess-macroProcess-process-batch.ear'
+
+project(':ejbmacroProcess-processmdb.jar').name='ejbmacroProcess-processmdb'
+project(':megaProcess-macroProcess-process-batch.ear').name='megaProcess-macroProcess-process-batch.ear'

@@ -1,0 +1,9 @@
+include 'iaprocesssubProcess.war',
+		'itprocesssubProcess.war',
+		'macroProcess-process-controller.jar',
+		'megaProcess-macroProcess-process.ear'
+
+project(':iaprocesssubProcess.war').name='iaprocesssubProcess'
+project(':itprocesssubProcess.war').name='itprocesssubProcess'
+project(':macroProcess-process-controller.jar').name='macroProcess-process-controller'
+project(':megaProcess-macroProcess-process.ear').name='megaProcess-macroProcess-process.ear'

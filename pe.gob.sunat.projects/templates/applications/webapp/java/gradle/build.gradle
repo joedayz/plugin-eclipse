@@ -1,0 +1,11 @@
+apply plugin: "jarConventions"
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies{
+	compile group: 'procesos.megaProcess.macroProcess.megaProcess-macroProcess-process-sharedlib', name: 'macroProcess-process-model', version: '1.0.0'
+	compile group: 'procesos.megaProcess.macroProcess.megaProcess-macroProcess-process-sharedlib', name: 'macroProcess-process-service-ifz', version: '1.0.0'
+	
+}

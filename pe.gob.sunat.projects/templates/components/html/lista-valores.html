@@ -1,0 +1,15 @@
+
+<div class="list-group" ng-app="sunatApp" ng-controller="ListaValoresController">
+	<a ng-repeat="item in data" ng-href="#" class="list-group-item"> <span
+		class="badge" ng-if="item.children > 0">></span>
+		<div>{{item.name}}</div>
+	</a>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script data-require="angular.js@1.4.9" data-semver="1.4.9"
+	src="https://code.angularjs.org/1.4.9/angular.js"></script>
+
+<script src="js/lista-valores.js"></script>

@@ -1,0 +1,7 @@
+apply plugin: "jarConventions"
+
+
+dependencies{
+	providedCompile 'javax:javaee-api:7.0' 
+	compile project(':macroProcess-process-model')
+}
